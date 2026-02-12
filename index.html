@@ -13,23 +13,18 @@
 </head>
 <body>
 
-    <!-- Música de fondo (opcional) -->
     <audio id="background-music" loop>
         <source src="musica-romantica.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Botón de música -->
     <button class="music-toggle" id="music-toggle" onclick="toggleMusic()">
         <span class="music-icon">🎵</span>
     </button>
 
-    <!-- Partículas de fondo -->
     <div class="particles" id="particles"></div>
 
-    <!-- Barra de progreso de scroll -->
     <div class="progress-bar" id="progress-bar"></div>
 
-    <!-- SECCIÓN 1: HERO CON PLAYA -->
     <section class="hero-section" id="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -272,7 +267,6 @@
                 </div>
             </div>
 
-            <!-- Estadísticas de amor -->
             <div class="love-stats">
                 <h3 class="stats-title">Nuestras Estadísticas del Amor</h3>
                 <div class="stats-grid">
@@ -299,7 +293,6 @@
                 </div>
             </div>
 
-            <!-- Mensaje final -->
             <div class="final-message">
                 <p class="final-text">
                     "Gracias por elegirme, por confiar en mí, por darme la oportunidad 
@@ -311,7 +304,6 @@
         </div>
     </section>
 
-    <!-- MODAL PARA VER FOTOS -->
     <div class="photo-modal hidden" id="photo-modal" onclick="closePhoto()">
         <div class="modal-card" onclick="event.stopPropagation()">
             <button class="modal-close" onclick="closePhoto()">×</button>
@@ -333,16 +325,13 @@
         </div>
     </div>
 
-    <!-- Botón de corazones flotante -->
     <button class="floating-hearts-btn" onclick="createHeartExplosion()">
         <span class="heart-icon">❤️</span>
         <span class="btn-tooltip">Lluvia de amor</span>
     </button>
 
-    <!-- Canvas para confeti -->
     <canvas id="confetti-canvas"></canvas>
 
-    <!-- Loading Screen -->
     <div class="loading-screen" id="loading-screen">
         <div class="loading-content">
             <div class="loading-heart">💖</div>

@@ -14,10 +14,8 @@ let heartbeatsCounter = 0;
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Verificar si ya aceptó la propuesta
     checkAcceptanceStatus();
     
-    // Inicializar componentes
     setTimeout(() => {
         hideLoadingScreen();
         createParticles();
@@ -27,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2000);
 });
 
-// Loading screen
 function hideLoadingScreen() {
     const loadingScreen = document.getElementById('loading-screen');
     const progress = document.getElementById('loading-progress');
@@ -47,7 +44,6 @@ function hideLoadingScreen() {
     }, 20);
 }
 
-// Verificar si ya aceptó (persistencia con localStorage)
 function checkAcceptanceStatus() {
     const accepted = localStorage.getItem('proposalAccepted');
     const acceptanceDate = localStorage.getItem('acceptanceDate');
@@ -55,16 +51,13 @@ function checkAcceptanceStatus() {
     if (accepted === 'true' && acceptanceDate) {
         acceptanceTime = new Date(acceptanceDate);
         
-        // Ocultar secciones anteriores y mostrar celebración
         document.getElementById('question-section').style.display = 'none';
         const celebration = document.getElementById('celebration-section');
         celebration.classList.remove('hidden');
         celebration.classList.add('show');
         
-        // Iniciar contador
         startLoveCounter();
         
-        // Scroll a celebración
         setTimeout(() => {
             celebration.scrollIntoView({ behavior: 'smooth' });
         }, 500);
