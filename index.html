@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 Para Mi Amor 💕</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Música de fondo (opcional) -->
+    <audio id="background-music" loop>
+        <source src="musica-romantica.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Botón de música -->
+    <button class="music-toggle" id="music-toggle" onclick="toggleMusic()">
+        <span class="music-icon">🎵</span>
+    </button>
+
+    <!-- Partículas de fondo -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Barra de progreso de scroll -->
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <!-- SECCIÓN 1: HERO CON PLAYA -->
+    <section class="hero-section" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="heart-container">
+                <div class="beating-heart">💖</div>
+            </div>
+            <h1 class="hero-title">¿Recuerdas este lugar?</h1>
+            <p class="hero-subtitle">Donde el tiempo se detuvo y mi corazón latió más fuerte... 🌊</p>
+            <div class="date-stamp">
+                <span class="date-icon">📅</span>
+                <span class="date-text">Un día que nunca olvidaré</span>
+            </div>
+            <div class="scroll-hint">
+                <span>Desliza para revivir nuestros momentos</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: INTRODUCCIÓN ROMÁNTICA -->
+    <section class="intro-section">
+        <div class="intro-content">
+            <div class="love-quote">
+                <span class="quote-mark">"</span>
+                <p class="quote-text">En un mundo lleno de casualidades, tú fuiste la mejor de todas</p>
+                <span class="quote-mark">"</span>
+            </div>
+            <div class="intro-text">
+                <p>Cada momento contigo es un tesoro que guardo en mi corazón.</p>
+                <p>He preparado algo especial para ti... 💕</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: GALERÍA DE MOMENTOS -->
+    <section class="memories-section">
+        <h2 class="section-title">
+            <span class="title-heart">💝</span>
+            Nuestros Momentos Inolvidables
+            <span class="title-heart">💝</span>
+        </h2>
+        <p class="section-subtitle">Toca cada sobre para descubrir un recuerdo especial ❤️</p>
+        
+        <div class="memories-counter">
+            <span id="opened-count">0</span> / 4 recuerdos descubiertos
+        </div>
+
+        <div class="envelopes-container">
+            
+            <div class="envelope-wrapper" data-index="0">
+                <div class="envelope" onclick="openEnvelope(0, 'foto1.jpeg', 'Tu sonrisa es la razón por la que mis días son mejores. Cada vez que te veo, mi mundo se llena de colores. Eres mi felicidad ✨', 'Primera vez que me hiciste sonreír')">
+                    <div class="envelope-stamp">
+                        <div class="stamp-content">💌</div>
+                    </div>
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="heart-seal">
+                            <div class="seal-text">Para ti</div>
+                        </div>
+                    </div>
+                    <p class="envelope-label">Carta de Amor #1</p>
+                </div>
+            </div>
+
+            <div class="envelope-wrapper" data-index="1">
+                <div class="envelope" onclick="openEnvelope(1, 'foto2.jpeg', 'Me encanta todo de ti: tu forma de ser, de reír, de mirarme. Cada detalle tuyo me enamora más. Eres perfecta tal como eres 🥰', 'El día que me robaste el aliento')">
+                    <div class="envelope-stamp">
+                        <div class="stamp-content">💌</div>
+                    </div>
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="heart-seal">
+                            <div class="seal-text">Para ti</div>
+                        </div>
+                    </div>
+                    <p class="envelope-label">Carta de Amor #2</p>
+                </div>
+            </div>
+
+            <div class="envelope-wrapper" data-index="2">
+                <div class="envelope" onclick="openEnvelope(2, 'foto3.jpeg', 'Desde ese día en la playa, no he dejado de pensar en ti. El sonido de las olas me recuerda tu risa, y la brisa marina tu dulzura 🌊💙', 'Nuestro momento junto al mar')">
+                    <div class="envelope-stamp">
+                        <div class="stamp-content">💌</div>
+                    </div>
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="heart-seal">
+                            <div class="seal-text">Para ti</div>
+                        </div>
+                    </div>
+                    <p class="envelope-label">Carta de Amor #3</p>
+                </div>
+            </div>
+
+            <div class="envelope-wrapper" data-index="3">
+                <div class="envelope" onclick="openEnvelope(3, 'foto4.jpeg', 'Eres la casualidad más bonita que me ha pasado en la vida. No fue suerte, fue destino encontrarte. Gracias por existir ✨❤️', 'El mejor encuentro de mi vida')">
+                    <div class="envelope-stamp">
+                        <div class="stamp-content">💌</div>
+                    </div>
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body">
+                        <div class="heart-seal">
+                            <div class="seal-text">Para ti</div>
+                        </div>
+                    </div>
+                    <p class="envelope-label">Carta de Amor #4</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Timeline decorativa -->
+        <div class="love-timeline">
+            <div class="timeline-line"></div>
+            <div class="timeline-dot" style="top: 0%">💕</div>
+            <div class="timeline-dot" style="top: 33%">💗</div>
+            <div class="timeline-dot" style="top: 66%">💖</div>
+            <div class="timeline-dot" style="top: 100%">💝</div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: RAZONES POR LAS QUE ME GUSTAS -->
+    <section class="reasons-section">
+        <h2 class="section-title">
+            <span class="title-heart">💕</span>
+            Razones por las que me gustas
+            <span class="title-heart">💕</span>
+        </h2>
+        
+        <div class="reasons-grid">
+            <div class="reason-card">
+                <div class="reason-icon">😊</div>
+                <h3>Tu Sonrisa</h3>
+                <p>Ilumina incluso mis días más grises</p>
+            </div>
+            <div class="reason-card">
+                <div class="reason-icon">✨</div>
+                <h3>Tu Forma de Ser</h3>
+                <p>Auténtica, única y maravillosa</p>
+            </div>
+            <div class="reason-card">
+                <div class="reason-icon">💭</div>
+                <h3>Nuestras Conversaciones</h3>
+                <p>Cada palabra tuya me encanta</p>
+            </div>
+            <div class="reason-card">
+                <div class="reason-icon">🌟</div>
+                <h3>Tu Presencia</h3>
+                <p>Hace que todo sea mejor</p>
+            </div>
+            <div class="reason-card">
+                <div class="reason-icon">❤️</div>
+                <h3>Tu Corazón</h3>
+                <p>Tan noble y hermoso</p>
+            </div>
+            <div class="reason-card">
+                <div class="reason-icon">🦋</div>
+                <h3>Las Mariposas</h3>
+                <p>Que siento cada vez que te veo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: LA GRAN PREGUNTA -->
+    <section class="question-section" id="question-section">
+        <div class="question-background"></div>
+        <div class="question-container">
+            <div class="question-decoration">
+                <div class="floating-heart-big">💕</div>
+                <div class="floating-heart-big">💗</div>
+                <div class="floating-heart-big">💖</div>
+            </div>
+            
+            <div class="question-box">
+                <h2 class="big-question" id="big-question"></h2>
+                <div class="question-subtitle">Esta es la pregunta más importante que te haré...</div>
+            </div>
+            
+            <div class="buttons-container" id="buttons-container">
+                <button class="btn-answer btn-yes" onclick="handleAnswer('yes')">
+                    <span class="btn-icon">💝</span>
+                    <span class="btn-text">¡SÍ, QUIERO SER TU NOVIA!</span>
+                    <div class="btn-shine"></div>
+                </button>
+                
+                <button class="btn-answer btn-no" id="btn-no" onclick="handleAnswer('no')">
+                    <span class="btn-icon">😢</span>
+                    <span class="btn-text">Necesito pensarlo...</span>
+                </button>
+            </div>
+
+            <p class="hint-text" id="hint-text">Mi corazón espera tu respuesta... 💕</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: CELEBRACIÓN -->
+    <section class="celebration-section hidden" id="celebration-section">
+        <div class="celebration-fireworks"></div>
+        <div class="celebration-content">
+            <div class="celebration-header">
+                <h2 class="celebration-title">¡DIJISTE QUE SÍ! 💘</h2>
+                <p class="celebration-message">¡Has hecho realidad mi sueño más grande!</p>
+                <div class="celebration-emoji-rain">
+                    <span>❤️</span><span>💕</span><span>💖</span><span>💗</span><span>💝</span>
+                </div>
+            </div>
+
+            <!-- Contador de amor -->
+            <div class="love-counter">
+                <h3 class="counter-title">
+                    <span class="counter-heart">💕</span>
+                    Juntos desde
+                    <span class="counter-heart">💕</span>
+                </h3>
+                <div class="counter-date-full" id="counter-date-full"></div>
+                <div class="counter-display" id="counter-display"></div>
+                <p class="counter-note">Y cada segundo cuenta... ⏰</p>
+            </div>
+
+            <!-- Promesas -->
+            <div class="promises-container">
+                <h3 class="promises-title">Mis Promesas Para Ti</h3>
+                <div class="promise-box">
+                    <div class="promise-item">
+                        <span class="promise-number">01</span>
+                        <p class="promise-text">Hacerte sonreír todos los días, incluso en los momentos difíciles</p>
+                    </div>
+                    <div class="promise-item">
+                        <span class="promise-number">02</span>
+                        <p class="promise-text">Estar a tu lado siempre, en las buenas y en las malas</p>
+                    </div>
+                    <div class="promise-item">
+                        <span class="promise-number">03</span>
+                        <p class="promise-text">Demostrarte cada día lo especial que eres para mí</p>
+                    </div>
+                    <div class="promise-item">
+                        <span class="promise-number">04</span>
+                        <p class="promise-text">Construir contigo los mejores recuerdos de nuestras vidas</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estadísticas de amor -->
+            <div class="love-stats">
+                <h3 class="stats-title">Nuestras Estadísticas del Amor</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-icon">😊</div>
+                        <div class="stat-number" id="stat-smiles">∞</div>
+                        <div class="stat-label">Sonrisas Causadas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">💭</div>
+                        <div class="stat-number" id="stat-thoughts">24/7</div>
+                        <div class="stat-label">Pensando en Ti</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">💓</div>
+                        <div class="stat-number" id="stat-heartbeats">0</div>
+                        <div class="stat-label">Latidos por Ti</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Amor Verdadero</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mensaje final -->
+            <div class="final-message">
+                <p class="final-text">
+                    "Gracias por elegirme, por confiar en mí, por darme la oportunidad 
+                    de hacerte feliz. Prometo que cada día contigo será especial. 
+                    Te amo con todo mi corazón. ❤️"
+                </p>
+                <div class="signature">- Tu enamorado 💕</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL PARA VER FOTOS -->
+    <div class="photo-modal hidden" id="photo-modal" onclick="closePhoto()">
+        <div class="modal-card" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closePhoto()">×</button>
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title"></h3>
+            </div>
+            <div class="modal-image-container">
+                <img class="modal-image" id="modal-image" src="" alt="Nuestro recuerdo">
+            </div>
+            <div class="modal-message-box">
+                <p class="modal-message" id="modal-message"></p>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-hearts">
+                    <span>💕</span><span>💗</span><span>💖</span>
+                </div>
+                <button class="modal-btn" onclick="closePhoto()">Cerrar 💝</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón de corazones flotante -->
+    <button class="floating-hearts-btn" onclick="createHeartExplosion()">
+        <span class="heart-icon">❤️</span>
+        <span class="btn-tooltip">Lluvia de amor</span>
+    </button>
+
+    <!-- Canvas para confeti -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-heart">💖</div>
+            <p class="loading-text">Preparando algo especial para ti...</p>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
